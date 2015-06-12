@@ -14,7 +14,24 @@ node1:
   build: .
   hostname: node1
   links:
-   - master
+   - master:master
   command: /bin/bash
   stdin_open: true
   tty: true
+node2:
+  build: .
+  hostname: node2
+  links:
+   - master:master
+  command: /bin/bash
+  stdin_open: true
+  tty: true
+node3:
+  build: .
+  hostname: node3
+  links:
+   - master:master
+  command: /bin/bash
+  stdin_open: true
+  tty: true
+  

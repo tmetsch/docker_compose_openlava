@@ -5,16 +5,20 @@ This repo is a start to show how to run [openlava](http://www.openlava.org/) wit
 
 Run docker-compose: 
 
-    $ docker-compose up -d
+    $ docker-compose up -d                 
     Recreating devopsopenlava_master_1...
+    Recreating devopsopenlava_node2_1...
+    Recreating devopsopenlava_node3_1...
     Recreating devopsopenlava_node1_1...
 
 List the started containers:
 
-    $ docker ps
-    CONTAINER ID        IMAGE                          COMMAND             CREATED             STATUS              PORTS                                                      NAMES
-    6439db1e27ae        devopsopenlava_node1:latest    "/bin/bash"         2 seconds ago       Up 1 seconds        6322-6325/tcp, 6322/udp                                    devopsopenlava_node1_1    
-    39aa9a6f96a0        devopsopenlava_master:latest   "/bin/bash"         3 seconds ago       Up 1 seconds        0.0.0.0:6322->6322/udp, 0.0.0.0:6322-6325->6322-6325/tcp   devopsopenlava_master_1   
+    $ $ docker ps
+    CONTAINER ID        IMAGE                          COMMAND             CREATED             STATUS              PORTS                     NAMES
+    da5b77edacef        devopsopenlava_node1:latest    "/bin/bash"         5 minutes ago       Up 5 minutes                                  devopsopenlava_node1_1    
+    de75b5f22136        devopsopenlava_node3:latest    "/bin/bash"         5 minutes ago       Up 5 minutes                                  devopsopenlava_node3_1    
+    c26929f67ec9        devopsopenlava_node2:latest    "/bin/bash"         5 minutes ago       Up 5 minutes                                  devopsopenlava_node2_1    
+    90f161d7be33        devopsopenlava_master:latest   "/bin/bash"         5 minutes ago       Up 5 minutes        6322-6325/tcp, 6322/udp   devopsopenlava_master_1    
 
 And attach to a container to start playing:
 
@@ -35,11 +39,14 @@ And attach to a container to start playing:
     HOST_NAME          STATUS       JL/U    MAX  NJOBS    RUN  SSUSP  USUSP    RSV 
     master             ok              -      4      0      0      0      0      0
     node1              ok              -      1      0      0      0      0      0
+    node2              ok              -      1      0      0      0      0      0
+    node3              ok              -      1      0      0      0      0      0
 
 ## TODO:
 
- * fix last remaining manual steps (adding node1 to /etc/hosts on master)
+ * fix last remaining manual steps (e.g. fixing /etc/hosts)
  * autostart openlava service
  * fix killall issue
  * run lim, res, etc within docker (turtles all the way)
+ * expose right ports to outside world
 
