@@ -1,6 +1,8 @@
 
 # Running OpenLava in docker containers.
 
+This repo is a start to show how to run [openlava](http://www.openlava.org/) within docker containers using docker-compose.
+
 Run docker-compose: 
 
     $ docker-compose up -d
