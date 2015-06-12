@@ -1,0 +1,20 @@
+master:
+  build: .
+  hostname: master
+  expose:
+   - 6322/udp
+   - 6322/tcp
+   - 6323
+   - 6324
+   - 6325
+  command: /bin/bash
+  stdin_open: true
+  tty: true
+node1:
+  build: .
+  hostname: node1
+  links:
+   - master
+  command: /bin/bash
+  stdin_open: true
+  tty: true
