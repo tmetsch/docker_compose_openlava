@@ -13,7 +13,7 @@ Run docker-compose:
 
 List the started containers:
 
-    $ $ docker ps
+    $ docker ps
     CONTAINER ID        IMAGE                          COMMAND             CREATED             STATUS              PORTS                     NAMES
     da5b77edacef        devopsopenlava_node1:latest    "/bin/bash"         5 minutes ago       Up 5 minutes                                  devopsopenlava_node1_1    
     de75b5f22136        devopsopenlava_node3:latest    "/bin/bash"         5 minutes ago       Up 5 minutes                                  devopsopenlava_node3_1    
